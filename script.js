@@ -29,10 +29,10 @@ tbMAT.onclick = function() {
     dVystup.style.display = "none"; 
 }
 function tbCheck(cjl, mat, prg, anj){
-    cjl ? msgCJL.classList.add("invisible") : msgCJL.classList.remove("invisible")
-    mat ? msgMAT.classList.add("invisible") : msgMAT.classList.remove("invisible")
-    prg ? msgPRG.classList.add("invisible") : msgPRG.classList.remove("invisible")
-    anj ? msgANJ.classList.add("invisible") : msgANJ.classList.remove("invisible")
+    !cjl || cjl <= 0 || cjl >= 6 ? msgCJL.classList.remove("invisible") : msgCJL.classList.add("invisible");
+    !mat || mat <= 0 || mat >= 6 ? msgMAT.classList.remove("invisible") : msgMAT.classList.add("invisible");
+    !prg || prg <= 0 || prg >= 6 ? msgPRG.classList.remove("invisible") : msgPRG.classList.add("invisible");
+    !anj || anj <= 0 || anj >= 6 ? msgANJ.classList.remove("invisible") : msgANJ.classList.add("invisible");
 }
 
 // tlačítko pro vyhodnocení
@@ -42,10 +42,11 @@ bVyhodnot.onclick = function() {
         let prg = parseInt(tbPRG.value);
         let anj = parseInt(tbANJ.value);
         let prumer = (cjl + mat + prg + anj) / 4;
+        let predmety = Array(cjl, mat, prg, anj);
 
         tbCheck(cjl, mat, prg, anj);
 
-        if (cjl && mat && prg && anj){
+        if ((predmety.every(num => num > 0 && num < 6))){
             if (cjl===5 || mat===5 || prg===5 || anj===5) {
                 // NEPROSPEL
                 ikona.src = "img/neprospel.png";
@@ -63,6 +64,9 @@ bVyhodnot.onclick = function() {
                     txtVystup.textContent = "Student prospěl";
                 }
             }
+            dVystup.style.display = ""; 
         }
-        dVystup.style.display = ""; 
+        else {
+            dVystup.style.display = "none"; 
+        }
 }
