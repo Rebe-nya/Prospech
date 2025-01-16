@@ -28,11 +28,14 @@ tbPRG.onclick = function() {
 tbMAT.onclick = function() {
     dVystup.style.display = "none"; 
 }
+function check(x, y){
+    !x || x <= 0 || x >= 6 ? y.classList.remove("invisible") : y.classList.add("invisible");
+}
 function tbCheck(cjl, mat, prg, anj){
-    !cjl || cjl <= 0 || cjl >= 6 ? msgCJL.classList.remove("invisible") : msgCJL.classList.add("invisible");
-    !mat || mat <= 0 || mat >= 6 ? msgMAT.classList.remove("invisible") : msgMAT.classList.add("invisible");
-    !prg || prg <= 0 || prg >= 6 ? msgPRG.classList.remove("invisible") : msgPRG.classList.add("invisible");
-    !anj || anj <= 0 || anj >= 6 ? msgANJ.classList.remove("invisible") : msgANJ.classList.add("invisible");
+    check(cjl, msgCJL);
+    check(anj, msgANJ);
+    check(prg, msgPRG);
+    check(mat, msgMAT);
 }
 
 // tlačítko pro vyhodnocení
