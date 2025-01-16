@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <style>
+        body {
+            background-color: rgb(27, 27, 27);
+            color: white;
+        }
+    </style>
+    <div id="dVstup" class="container">
+        <h1>Známky z předmětů</h1>
+        <div class="form-group p-2 pt-2 row">
+            <label for="tbCJL" class="col-3 col-form-label">CJL</label>
+            <div class="col-3">
+                <input type="number" class="form-control" id="tbCJL">
+                <div  id="msgCJL" class="form-text text-danger invisible">Neplatná hodnota!</div>
+            </div>
+        </div>
+        <div class="form-group p-2 row">
+            <label for="tbANJ" class="col-3 col-form-label">ANJ</label>
+            <div class="col-3">
+                <input type="number" class="form-control" id="tbANJ">
+                <div id="msgANJ" class="form-text text-danger invisible">Neplatná hodnota!</div>
+            </div>
+        </div>
+        <div class="form-group p-2 row">
+            <label for="tbPRG" class="col-3 col-form-label">PRG</label>
+            <div class="col-3">
+                <input type="number" class="form-control" id="tbPRG">
+                <div id="msgPRG"  class="form-text text-danger invisible">Neplatná hodnota!</div>
+            </div>
+        </div>
+        <div class="form-group p-2 row">
+            <label for="tbMAT" class="col-3 col-form-label">MAT</label>
+            <div class="col-3">
+                <input type="number" class="form-control" id="tbMAT">
+                <div  id="msgMAT" class="form-text text-danger invisible">Neplatná hodnota!</div>
+            </div>
+        </div>
+        <div class="form-group p-2 row">
+            <button type="button" id="bVyhodnot" class="col-6 btn btn-primary">Vyhodnoť výsledný prospěch</button>
+        </div>
+    </div>
+    <div id="dVystup" class="container">
+        <div class="p-2 pt-2 row">
+            <div class="col-3">
+                <h1 id="hodnoceni"></h1>
+            </div>
+            <div class="col-3 d-flex justify-content-end">
+                <img src="" width="100" id="ikona" readonly>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
